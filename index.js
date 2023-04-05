@@ -67,7 +67,7 @@ bot.on("login", async (user) => {
   const { fashi } = await getContactor();
   setInterval(() => {
     const { h, m, week } = getTime();
-    if (h === 17 && m === 45) {
+    if (h === 17 && m === 45 && week && week < 6) {
       fashi.say("alive");
     }
   }, 1000 * 60);
@@ -119,7 +119,7 @@ async function main() {
   const { fashi, xinyu } = await getContactor();
   setInterval(() => {
     const { h, m, week } = getTime();
-    if (h === 18 && m === 0) {
+    if (h === 18 && m === 0 && week && week < 6) {
       fashi.say("打卡提醒送达");
       xinyu.say("下班啦，不要忘记打卡哦" + repeatEmoji(getRadomEmoji()));
       sendRepeat();
@@ -139,7 +139,7 @@ async function workOverTime() {
   const timer8 = setInterval(function () {
     const { h, m, week } = getTime();
     try {
-      if (h === 20 && m === 0) {
+      if (h === 20 && m === 0 && week && week < 6) {
         fashi.say("加班打卡提醒送达");
         xinyu.say("怎么样啦，不要忘记打卡哦" + repeatEmoji(getRadomEmoji()));
         sendRepeat();
