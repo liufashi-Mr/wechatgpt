@@ -161,8 +161,8 @@ async function sendRepeat() {
 async function closeTalk() {
   const { fashi, xinyu } = await getContactor();
   fashi.say("对方已接收");
-  xinyu.say("好的~[好的]");
-  xinyu.say(repeatEmoji(getRadomEmoji()));
+  xinyu.say("好的[好的]");
+  xinyu.say("路上注意安全~"+repeatEmoji(getRadomEmoji()));
 
   clearInterval(timer);
 }
